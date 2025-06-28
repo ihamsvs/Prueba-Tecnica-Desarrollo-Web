@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏡 Visualizador de Propiedades Inmobiliarias
 
-## Getting Started
+Este proyecto es una aplicación desarrollada con **Next.js + TypeScript** que permite visualizar propiedades disponibles, buscar, filtrar, marcar como favoritas y ver recomendaciones similares.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## 📁 Estructura del proyecto
+
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── ListaPropiedades.tsx      # Componente que renderiza el listado con búsqueda, paginación y favoritos
+│   │   ├── NavBar.tsx                # Navegación principal
+│   │   └── PropiedadCard.tsx         # Tarjeta individual de propiedad
+│   ├── favoritos/
+│   │   └── page.tsx                  # Página para mostrar las propiedades favoritas
+│   ├── hooks/
+│   │   └── useFavoritos.ts           # Hook personalizado para manejar favoritos en localStorage
+│   ├── lib/
+│   │   └── recomendaciones.ts        # Lógica para calcular recomendaciones similares
+│   ├── propiedad/
+│   │   └── [id]/page.tsx             # Página de detalle para una propiedad individual
+│   ├── types/
+│   │   └── propiedad.ts              # Tipado de la entidad Propiedad
+│   ├── layout.tsx                    # Layout principal de la aplicación
+│   └── page.tsx                      # Página principal
+├── public/
+│   └── data/
+│       └── properties_mock_100_clean.json  # Archivo JSON de propiedades
+└── styles/
+    └── globals.css                   # Estilos globales
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧩 Funcionalidades principales
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+✅ Listado de propiedades paginado  
+✅ Filtro por texto (ciudad, tipo, título)  
+✅ Vista de detalle por propiedad  
+✅ Recomendaciones similares (misma ciudad, tipo, precio ±20%)  
+✅ Marcar propiedades como favoritas (persistencia con `localStorage`)  
+✅ Página dedicada a favoritos  
+✅ UI moderna y responsive con animaciones
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠️ Instalación y uso
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+pnpm install
+pnpm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+La app se ejecutará en `http://localhost:3000`
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 📦 Datos
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Los datos están disponibles en `public/data/properties_mock_100_clean.json`, y se consumen mediante `fetch` desde varias rutas.
+
+---
+
+## 📌 Consideraciones técnicas
+
+- Los datos favoritos se almacenan en `localStorage` bajo la clave `"favoritos"`.
+- `useFavoritos.ts` contiene toda la lógica de lectura/escritura reactiva.
+- La lógica de recomendación se encuentra en `lib/recomendaciones.ts`.
+- Todo el proyecto está tipado con TypeScript.
+- Se usa enfoque modular y componentes reutilizables.
+
+---
+
+## ✨ Mejoras futuras sugeridas
+
+- Guardar favoritos en backend o persistencia de sesión
+- Añadir filtrado por rango de precios
+- Paginación con scroll infinito
+- Test unitarios con Jest o React Testing Library
+- Responsive completo para móviles
+
+---
+
+## 🧑‍💻 Autor
+
+Proyecto realizado como parte de una prueba técnica o desafío de alt 94
