@@ -7,9 +7,10 @@
  * @route GET /propiedad/[id]
  */
 
-import { Propiedad } from "@/app/types/propiedad";
-import { obtenerRecomendaciones } from "@/app/lib/recomendaciones";
-import PropiedadCard from "@/app/components/PropiedadCard";
+
+import { Propiedad } from "../../types/propiedad";
+import { obtenerRecomendaciones } from "../../lib/recomendaciones";
+import PropiedadCard from "../../components/PropiedadCard";
 
 export default async function PropiedadPage({
   params,
@@ -71,7 +72,6 @@ export default async function PropiedadPage({
               key={p.id}
               propiedad={p}
               esFavorito={false}
-              onToggleFavorito={() => {}}
             />
           ))}
         </div>

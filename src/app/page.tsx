@@ -1,7 +1,7 @@
 
 
 import { Propiedad } from './types/propiedad';
-import ListaPropiedades from '@/app/components/ListaPropiedades';
+import ListaPropiedades from './components/ListaPropiedades';
 
 
 export default async function HomePage(){
