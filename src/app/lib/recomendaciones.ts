@@ -5,7 +5,7 @@
  * con una propiedad de referencia, considerando ubicación, tipo y rango de precios.
  */
 
-import {Propiedad} from "@/app/types/propiedad";
+import {Propiedad} from "../types/propiedad";
 
 /**
  * Obtiene propiedades recomendadas basadas en una propiedad de referencia
