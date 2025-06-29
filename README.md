@@ -83,6 +83,6 @@ Los datos están disponibles en `public/data/properties_mock_100_clean.json`, y 
 
 ---
 
-## 🧑‍💻 Autor
+## 🧑‍💻 Autor Iham Vivanco
 
 Proyecto realizado como parte de una prueba técnica o desafío de alt 94
